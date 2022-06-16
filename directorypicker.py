@@ -23,10 +23,13 @@ def st_directory_picker(initial_path=Path()):
 
     with col3:
         sub_directroies = [
-            f.stem for f in st.session_state.path.iterdir() if f.is_dir()
+            f.stem
+            for f in st.session_state.path.iterdir()
+            if f.is_dir()
+            and (not f.stem.startswith(".") and not f.stem.startswith("__"))
         ]
         if sub_directroies:
-            st.session_state.new_dir = st.selectbox("", sub_directroies)
+            st.session_state.new_dir = st.selectbox("", sorted(sub_directroies))
         else:
             st.markdown("#")
             st.markdown(
