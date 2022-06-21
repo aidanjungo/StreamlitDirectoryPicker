@@ -1,4 +1,4 @@
-# StreamlitDirectroyPicker
+# StreamlitDirectoryPicker
 
 Workaround to select a directory in a [Streamlit](https://streamlit.io/) app.
 
